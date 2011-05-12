@@ -1,0 +1,19 @@
+{
+  "name": "Земя на заем - форумен помощник",
+  "version": "1.0",
+  "description": "Помощни функции за форума",
+  "browser_action": {
+      "default_icon": "icon.gif",
+      "default_title": "Земя на заем - форумен помощник",
+      "popup": "popup.html"
+  },
+  "content_scripts": [ {
+      "matches": ["http://forum.zemianazaem.com/*"],
+      "run_at": "document_end",
+      "js": ["jquery-1.6.0.min.js", "ignore.js"]
+  } ],
+  "permissions": [
+      "tabs",
+      "http://forum.zemianazaem.com/"
+  ]
+}
