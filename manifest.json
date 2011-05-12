@@ -1,10 +1,10 @@
 {
-  "name": "Земя на заем - форумен помощник",
+  "name": "Земя на заем - Ignore",
   "version": "1.0",
-  "description": "Помощни функции за форума",
+  "description": "Скрийте постовете на някои хора.",
   "browser_action": {
       "default_icon": "icon.gif",
-      "default_title": "Земя на заем - форумен помощник",
+      "default_title": "Земя на заем - Ignore",
       "popup": "popup.html"
   },
   "content_scripts": [ {
