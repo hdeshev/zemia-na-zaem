@@ -1,7 +1,7 @@
 {
-  "name": "Земя на заем - Ignore",
+  "name": "Ignore за \"Земя на заем\"",
   "version": "1.0",
-  "description": "Скрийте постовете на някои хора.",
+  "description": "Скрийте постовете на хората, които не държите да четете.",
   "options_page": "options.html",
   "background_page": "background.html",
   "content_scripts": [ {
