@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Popup</title>
+    <style type="text/css">
+    </style>
+
+    <script type="text/javascript">
+        function saveIgnored() {
+            var nameContent = document.getElementById("users").value
+            var ignored = []
+            var nameLines = nameContent.split("\n")
+            for (var i = 0; i < nameLines.length; i++) {
+                var name = nameLines[i].trim()
+                if (name != null && name != "")
+                    ignored.push(name)
+            }
+
+            localStorage["ignore.users"] = ignored.join("\n")
+            window.close()
+        }
+
+        function loadIgnored() {
+            var ignoredSetting = localStorage["ignore.users"] || ""
+            var ignored = ignoredSetting.split("\n")
+            var usersBox = document.getElementById("users")
+            usersBox.value = ignored.join("\n")
+        }
+    </script>
+</head>
+<body onload="loadIgnored()">
+    <p>Скрий потребители (всеки на отделен ред):</p>
+    <p><textarea id="users" name="users" rows="8" cols="40"></textarea></p>
+    <p><input type="button" name="saveButton" onclick="saveIgnored()" value="Запиши" /></p>
+</body>
+</html>
+
