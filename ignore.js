@@ -1,6 +1,6 @@
 function ignorePosts(ignored) {
     var rows = $(".windowbg").add(".windowbg2").each(function(index, element) {
-        var nickLinks = $(element).find('a[href*="action=profile"]')
+        var nickLinks = $(element).find('b > a[href*="action=profile"]')
         var nickLink = nickLinks.first()[0]
         if (nickLink != null) {
             var nick = nickLink.innerHTML.trim()
