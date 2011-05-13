@@ -1,10 +1,15 @@
 function ignorePosts(ignored) {
     var rows = $(".windowbg").add(".windowbg2").each(function(index, element) {
-        var nickLink = $(element).find('a[href*="action=profile;u="]').first()[0]
-        var nick = nickLink.innerHTML.trim()
+        var nickLinks = $(element).find('a[href*="action=profile"]')
+        var nickLink = nickLinks.first()[0]
+        if (nickLink != null) {
+            var nick = nickLink.innerHTML.trim()
+            console.log("Post by: " + nick)
 
-        if (ignored.indexOf(nick) >= 0) {
-            element.innerHTML = "<strong style='color: red; font-weight: bold'>IGNORED: " + nick + "</strong>";
+            if (ignored.indexOf(nick) >= 0) {
+                console.log("Hiding post.")
+                element.innerHTML = "<strong style='color: red; font-weight: bold'>СКРИТ: " + nick + "</strong>";
+            }
         }
     })
 }
